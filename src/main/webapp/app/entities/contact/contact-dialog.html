@@ -1,0 +1,98 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myContactLabel">Create or edit a Contact</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.contact.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.contact.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.contact.name"
+                    required/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" id="field_lastname"
+                    ng-model="vm.contact.lastname"
+                    required/>
+            <div ng-show="editForm.lastname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastname.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_position">Position</label>
+            <input type="text" class="form-control" name="position" id="field_position"
+                    ng-model="vm.contact.position"
+                    required/>
+            <div ng-show="editForm.position.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.position.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_area">Area</label>
+            <input type="text" class="form-control" name="area" id="field_area"
+                    ng-model="vm.contact.area"
+                    required/>
+            <div ng-show="editForm.area.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.area.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_vinculo">Vinculo</label>
+            <input type="text" class="form-control" name="vinculo" id="field_vinculo"
+                    ng-model="vm.contact.vinculo"
+                    required/>
+            <div ng-show="editForm.vinculo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.vinculo.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_relationshipType">Relationship Type</label>
+            <input type="text" class="form-control" name="relationshipType" id="field_relationshipType"
+                    ng-model="vm.contact.relationshipType"
+                    required/>
+            <div ng-show="editForm.relationshipType.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.relationshipType.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
